@@ -1,0 +1,30 @@
+{
+  "name": "lviv-metro",
+  "version": "1.0.0",
+  "description": "CLI-helper for getting information about legendary Lviv subway",
+  "main": "./bin/lviv-metro.js",
+  "scripts": {
+    "test": "node ./test/ultimate-test-of-lviv.js"
+  },
+  "bin": {
+    "lviv-metro": "./bin/lviv-metro.js",
+    "lviv-metro-check-existence": "./bin/lviv-metro-check-existence.js",
+    "lviv-metro-map": "./bin/lviv-metro-map.js",
+    "lviv-metro-news": "./bin/lviv-metro-news.js"
+  },
+  "keywords": [
+    "lviv",
+    "metro",
+    "subway",
+    "joke",
+    "fun"
+  ],
+  "author": "Volodymyr Fedyk <volodymyr.fedyk@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.19.0",
+    "iconv-lite": "^0.4.24",
+    "opn": "^5.4.0",
+    "xml2js": "^0.4.19"
+  }
+}
