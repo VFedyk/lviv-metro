@@ -1,6 +1,6 @@
 {
   "name": "lviv-metro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI-helper for getting information about legendary Lviv subway",
   "main": "./bin/lviv-metro.js",
   "scripts": {
@@ -29,8 +29,8 @@
   },
   "homepage": "https://github.com/VFedyk/lviv-metro#readme",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/VFedyk/lviv-metro.git"
+    "type": "git",
+    "url": "https://github.com/VFedyk/lviv-metro.git"
   },
   "bugs": "https://github.com/VFedyk/lviv-metro/issues"
 }
