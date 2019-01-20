@@ -1,6 +1,6 @@
 {
   "name": "lviv-metro",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "CLI-helper for getting information about legendary Lviv subway",
   "main": "./bin/lviv-metro.js",
   "scripts": {
