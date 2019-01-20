@@ -9,7 +9,6 @@ const parseXML = promisify(parseString);
 const getURL = (url) => {
   return new Promise((resolve, reject) => {
     get(url, (res) => {
-      // res.setEncoding('utf8');
       let body = '';
       res.on('data', data => body += decode(data, 'cp1251'));
       res.on('error', (e) => reject(e));

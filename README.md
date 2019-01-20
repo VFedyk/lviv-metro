@@ -9,7 +9,7 @@ CLI-helper for getting information about legendary Lviv subway
 npm install -g lviv-metro
 ```
 
-# Usage
+## Usage
 ```
 lviv-metro [options] [command]
 
