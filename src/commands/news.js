@@ -1,33 +1,13 @@
-const { get } = require('http');
-const { promisify } = require('util');
+const { parseRSS } = require('../utils/parse-rss');
 
-const { decode } = require('iconv-lite');
-const { parseString } = require('xml2js');
-
-const parseXML = promisify(parseString);
-
-const getURL = (url) => {
-  return new Promise((resolve, reject) => {
-    get(url, (res) => {
-      let body = '';
-      res.on('data', data => body += decode(data, 'cp1251'));
-      res.on('error', (e) => reject(e));
-      res.on('end', () => resolve(body));
-    });
-  });
+const printNewsItem = ({ title, pubDate, link }) => {
+  process.stdout.write(`${title}\n${link}\n${pubDate}\n\n`, 'utf8');
 };
 
 const main = async () => {
-  const rssLink = 'http://metro.lviv.ua/news/rss.xml';
-  const rawText = await getURL(rssLink);
-  const parsed = await parseXML(rawText, { explicitArray: false });
-  const news = parsed.rss.channel.item;
-
-  news.forEach((newsItem) => {
-    console.log(newsItem.title);
-    console.log(`Date: ${newsItem.pubDate}, URL: ${newsItem.link}`);
-    console.log('-');
-  })
+  const parsedRSS = await parseRSS('http://metro.lviv.ua/news/rss.xml', 'cp1251');
+  const news = parsedRSS.rss.channel.item;
+  news.forEach(printNewsItem);
 };
 
 main();
