@@ -23,3 +23,12 @@ Commands:
   map              opens Lviv Metro map in your default browser
 ```
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## Acknowledgments
+
+* [Lviv Metro website](http://metro.lviv.ua/)
+* [atbmarket](https://npmjs.com/package/atbmarket) package - for inspiration
+* all kind people who creates legends about Lviv subway
