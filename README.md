@@ -2,8 +2,6 @@
 
 CLI-helper for getting information about legendary Lviv subway
 
-![Lviv Metro Map](http://metro.lviv.ua/uploads/posts/2015-04/1428174683_mapa-metro-lviv.png)
-
 ## Installation
 ```sh
 npm install -g lviv-metro
