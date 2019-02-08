@@ -1,7 +1,8 @@
+const { yellow, green } = require('chalk');
 const { parseRSS } = require('../utils/parse-rss');
 
 const printNewsItem = ({ title, pubDate, link }) => {
-  process.stdout.write(`${title}\n${link}\n${pubDate}\n\n`, 'utf8');
+  process.stdout.write(`${yellow(title)}\n${link}\n${green(pubDate)}\n\n`, 'utf8');
 };
 
 const main = async () => {
