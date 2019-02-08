@@ -1,6 +1,12 @@
 const { get } = require('http');
 const { decode } = require('iconv-lite');
 
+/**
+ * Get web-page content
+ * @param {string} url
+ * @param {string} encoding
+ * @returns {Promise<any>}
+ */
 module.exports.getURL = (url, encoding = 'utf8') => {
   return new Promise((resolve, reject) => {
     get(url, (res) => {
