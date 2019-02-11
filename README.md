@@ -2,6 +2,8 @@
 
 CLI-helper for getting information about legendary Lviv subway
 
+[![Known Vulnerabilities](https://snyk.io/test/github/VFedyk/lviv-metro/badge.svg?targetFile=package.json)](https://snyk.io/test/github/VFedyk/lviv-metro?targetFile=package.json)
+
 ## Installation
 ```sh
 npm install -g lviv-metro
