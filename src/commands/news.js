@@ -6,9 +6,14 @@ const printNewsItem = ({ title, pubDate, link }) => {
 };
 
 const main = async () => {
-  const parsedRSS = await parseRSS('http://metro.lviv.ua/news/rss.xml', 'cp1251');
-  const news = parsedRSS.rss.channel.item;
-  news.forEach(printNewsItem);
+  try {
+    const parsedRSS = await parseRSS('https://metro.lviv.ua/news/rss.xml', 'cp1251');
+    const news = parsedRSS.rss.channel.item;
+    news.forEach(printNewsItem);
+  } catch (e) {
+    console.error(e.stack);
+    process.exit(1)
+  }
 };
 
 main();
