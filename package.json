@@ -22,12 +22,12 @@
   "author": "Volodymyr Fedyk <volodymyr.fedyk@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^2.4.2",
-    "commander": "^2.19.0",
-    "iconv-lite": "^0.4.24",
-    "node_extra_ca_certs_mozilla_bundle": "^1.0.4",
-    "opn": "^5.4.0",
-    "xml2js": "^0.4.19"
+    "axios": "0.19.2",
+    "chalk": "4.0.0",
+    "commander": "5.0.0",
+    "iconv-lite": "0.5.1",
+    "opn": "6.0.0",
+    "xml2js": "0.4.23"
   },
   "homepage": "https://github.com/VFedyk/lviv-metro#readme",
   "repository": {
@@ -37,6 +37,6 @@
   "bugs": "https://github.com/VFedyk/lviv-metro/issues",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^5.2.0"
+    "mocha": "7.1.1"
   }
 }
