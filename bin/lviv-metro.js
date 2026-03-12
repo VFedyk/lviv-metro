@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const app = require('commander');
+const { program: app } = require('commander');
 const { version } = require('../package');
 
 app
