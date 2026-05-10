@@ -10,11 +10,7 @@ const printNewsItem = ({ title, pubDate, link }) => {
 
 const main = async () => {
   try {
-    const parsedRSS = await parseRSS(
-      "https://metro.lviv.ua/news/rss.xml",
-      "cp1251",
-    );
-    const news = parsedRSS.rss.channel.item;
+    const news = await parseRSS("https://metro.lviv.ua/news/rss.xml", "cp1251");
     news.forEach(printNewsItem);
   } catch (e) {
     console.error(e.stack);
