@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-require('../src/commands/check-existence');
+import '../src/commands/check-existence.js';

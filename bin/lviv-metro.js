@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-const { program: app } = require('commander');
-const { version } = require('../package');
+import { program as app } from 'commander';
+import pkg from '../package.json' with { type: 'json' };
 
 app
-  .version(version)
+  .version(pkg.version)
   .command('news', 'shows the news about Lviv Metro (in Ukrainian)')
   .command('check-existence', 'checks if Lviv Metro is already built')
   .command('map', 'opens Lviv Metro map in your default browser')

@@ -1,5 +1,5 @@
-const { expect } = require('chai');
-const { getURL } = require('../src/utils/get-url');
+import { expect } from 'chai';
+import { getURL } from '../src/utils/get-url.js';
 
 describe('getURL', () => {
   let originalFetch;
@@ -27,14 +27,14 @@ describe('getURL', () => {
     mockFetch([
       0xCB, 0xFC, 0xE2, 0xB3, 0xE2, 0x20, // "Львів "
       0xBF, 0xE6, 0xE0, 0x20,              // "їжа "
-      0xBA, 0xE4, 0xED, 0xB3, 0xF1, 0xF2, 0xFC, // "єдністьFC"
+      0xBA, 0xE4, 0xED, 0xB3, 0xF1, 0xF2, 0xFC, // "єдність"
     ]);
     const result = await getURL('http://x.test/', 'cp1251');
     expect(result).to.equal('Львів їжа єдність');
   });
 
   it('decodes UTF-8 when no encoding is specified', async () => {
-    mockFetch(Buffer.from('Lviv Metro', 'utf8'));
+    mockFetch(new TextEncoder().encode('Lviv Metro'));
     const result = await getURL('http://x.test/');
     expect(result).to.equal('Lviv Metro');
   });

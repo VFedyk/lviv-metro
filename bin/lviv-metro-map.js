@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-require('../src/commands/map');
+import '../src/commands/map.js';

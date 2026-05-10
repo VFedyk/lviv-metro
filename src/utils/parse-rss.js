@@ -1,18 +1,11 @@
-const { getURL } = require('./get-url');
+import { getURL } from './get-url.js';
 
 const extractTag = (xml, tag) => {
   const m = xml.match(new RegExp(`<${tag}[^>]*>(?:<!\\[CDATA\\[)?([\\s\\S]*?)(?:\\]\\]>)?<\\/${tag}>`));
   return m ? m[1].trim() : '';
 };
 
-/**
- * Gets RSS-feed with given encoding
- * @param {string} rssURL
- * @param {string} encoding
- * @returns {Promise<Array<{title: string, link: string, pubDate: string}>>}
- */
-module.exports.parseRSS = async (rssURL, encoding = 'utf8') => {
-  const xml = await getURL(rssURL, encoding);
+export const parseItems = (xml) => {
   const items = [];
   const re = /<item>([\s\S]*?)<\/item>/g;
   let m;
@@ -25,3 +18,12 @@ module.exports.parseRSS = async (rssURL, encoding = 'utf8') => {
   }
   return items;
 };
+
+/**
+ * Gets RSS-feed with given encoding
+ * @param {string} rssURL
+ * @param {string} encoding
+ * @returns {Promise<Array<{title: string, link: string, pubDate: string}>>}
+ */
+export const parseRSS = async (rssURL, encoding = 'utf8') =>
+  parseItems(await getURL(rssURL, encoding));

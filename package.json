@@ -22,6 +22,7 @@
   ],
   "author": "Volodymyr Fedyk <volodymyr.fedyk@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "engines": {
     "node": ">=22"
   },
@@ -37,7 +38,7 @@
   },
   "bugs": "https://github.com/VFedyk/lviv-metro/issues",
   "devDependencies": {
-    "chai": "^4.5.0",
+    "chai": "^6.2.2",
     "mocha": "^11.7.5"
   },
   "overrides": {
