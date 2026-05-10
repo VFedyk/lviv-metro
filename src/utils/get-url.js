@@ -1,25 +1,13 @@
-const axios = require('axios');
-const { decodeStream } = require('iconv-lite');
-
-const getDataFromStream = (dataStream, encoding) => {
-  return new Promise((resolve, reject) => {
-    dataStream.pipe(decodeStream(encoding)).collect((err, body) => {
-      if (err) {
-        return reject(err)
-      }
-
-      resolve(body)
-    })
-  })
-};
+const { decode } = require('iconv-lite');
 
 /**
  * Get web-page content by HTTPS
  * @param {string} url
  * @param {string} encoding
- * @returns {Promise<any>}
+ * @returns {Promise<string>}
  */
-module.exports.getURL = (url, encoding) => {
-  return axios({url, method: 'GET', responseType: 'stream'})
-    .then(({data}) => getDataFromStream(data, encoding))
+module.exports.getURL = async (url, encoding) => {
+  const response = await fetch(url);
+  const buffer = await response.arrayBuffer();
+  return decode(Buffer.from(buffer), encoding);
 };

@@ -1,11 +1,13 @@
 const isMetroBuilt = false;
 
-console.log('Checking...');
+console.log("Checking...");
 
 if (!isMetroBuilt) {
-  console.log('Metro is not built yet! Stay tuned!');
+  console.log("Metro is not built yet! Stay tuned!");
 } else {
-  console.log('Of course Lviv has the subway,\nLviv is large city with more than 1 million people!');
+  console.log(
+    "Of course, Lviv has the subway,\nLviv is large city with more than 1 million people!",
+  );
 }
 
-console.log('Done.');
+console.log("Done.");
